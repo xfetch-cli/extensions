@@ -1,8 +1,9 @@
 [workspace]
 members = [
   "extensions/layout-override",
+  "extensions/config-roulette",
 ]
 resolver = "2"
 
 [workspace.dependencies]
-xfetch-extension-api = { path = "https://github.com/xfetch-cli/api", package = "xfetch-extension-api" }
+xfetch-extension-api = { git = "https://github.com/xfetch-cli/api", package = "xfetch-extension-api" }
