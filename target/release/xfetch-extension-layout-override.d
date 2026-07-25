@@ -1,1 +1,0 @@
-/home/x0z/Documents/repos/xfetch-cli/extensions/target/release/xfetch-extension-layout-override: /home/x0z/Documents/repos/xfetch-cli/api/crates/extension-api/src/lib.rs /home/x0z/Documents/repos/xfetch-cli/api/crates/extension-api/src/types.rs /home/x0z/Documents/repos/xfetch-cli/extensions/extensions/layout-override/src/main.rs
