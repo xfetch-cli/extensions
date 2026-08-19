@@ -18,6 +18,11 @@
   </li>
   <li>Document the extension in its own <code>README.md</code> and in the repository <code>README.md</code>.</li>
   <li>
+    Update the <a href="./docs/compatibility.md">platform compatibility
+    table</a> with the new extension and its Linux/macOS/Windows support —
+    required for every new or modified extension.
+  </li>
+  <li>
     Open a pull request with usage details and any required external
     dependencies. PRs that fail CI are rejected.
   </li>
