@@ -56,6 +56,11 @@
   </tbody>
 </table>
 
+<p>
+  See <a href="./docs/compatibility.md">Platform Compatibility</a> for which
+  extensions work on Linux, macOS and Windows.
+</p>
+
 <h2>Developing Locally</h2>
 
 <p>
