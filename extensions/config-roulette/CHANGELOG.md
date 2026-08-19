@@ -1,0 +1,5 @@
+# Changelog
+
+## 2026-08-19
+- Wrapped work in `with_timeout` with a 2 s budget; on timeout it exits with an error instead of hanging.
+- Fixed `~` expansion on Windows (falls back to `USERPROFILE` when `HOME` is unset).

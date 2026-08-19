@@ -1,6 +1,9 @@
 use serde::Deserialize;
 use std::io::{Read, Write};
-use xfetch_extension_api::{ConfigProviderRequest, ConfigProviderResponse, KIND_CONFIG_PROVIDER};
+use std::time::Duration;
+use xfetch_extension_api::{
+    ConfigProviderRequest, ConfigProviderResponse, KIND_CONFIG_PROVIDER, with_timeout,
+};
 
 #[derive(Debug, Default, Deserialize)]
 struct LayoutOverrideArgs {
@@ -9,42 +12,56 @@ struct LayoutOverrideArgs {
     modules: Option<Vec<String>>,
 }
 
+/// Pure config transformation; 2 s is plenty.
+const BUDGET: Duration = Duration::from_secs(2);
+
 fn main() {
-    let request: ConfigProviderRequest = match read_stdin() {
-        Ok(v) => v,
-        Err(err) => {
-            eprintln!("{}", err);
+    let result = with_timeout(BUDGET, || {
+        let request: ConfigProviderRequest = match read_stdin() {
+            Ok(v) => v,
+            Err(err) => {
+                eprintln!("{}", err);
+                std::process::exit(1);
+            }
+        };
+
+        if request.kind != KIND_CONFIG_PROVIDER {
+            eprintln!("Unsupported kind: {}", request.kind);
             std::process::exit(1);
         }
-    };
 
-    if request.kind != KIND_CONFIG_PROVIDER {
-        eprintln!("Unsupported kind: {}", request.kind);
-        std::process::exit(1);
-    }
+        let args: LayoutOverrideArgs = request
+            .args
+            .as_ref()
+            .and_then(|v| serde_json::from_value(v.clone()).ok())
+            .unwrap_or_default();
 
-    let args: LayoutOverrideArgs = request
-        .args
-        .as_ref()
-        .and_then(|v| serde_json::from_value(v.clone()).ok())
-        .unwrap_or_default();
+        let mut config = request.config.clone();
 
-    let mut config = request.config.clone();
+        if let Some(layout) = &args.layout {
+            if let Some(obj) = config.as_object_mut() {
+                obj.insert("layout".to_string(), serde_json::json!(layout));
+            }
+        }
 
-    if let Some(layout) = &args.layout {
-        if let Some(obj) = config.as_object_mut() {
-            obj.insert("layout".to_string(), serde_json::json!(layout));
+        if let Some(modules) = &args.modules {
+            let mods: Vec<serde_json::Value> =
+                modules.iter().map(|m| serde_json::json!(m)).collect();
+            if let Some(obj) = config.as_object_mut() {
+                obj.insert("modules".to_string(), serde_json::Value::Array(mods));
+            }
+        }
+
+        config
+    });
+
+    match result {
+        Ok(config) => write_stdout(&ConfigProviderResponse { config }),
+        Err(_) => {
+            eprintln!("layout-override: timed out");
+            std::process::exit(1);
         }
     }
-
-    if let Some(modules) = &args.modules {
-        let mods: Vec<serde_json::Value> = modules.iter().map(|m| serde_json::json!(m)).collect();
-        if let Some(obj) = config.as_object_mut() {
-            obj.insert("modules".to_string(), serde_json::Value::Array(mods));
-        }
-    }
-
-    write_stdout(&ConfigProviderResponse { config });
 }
 
 fn read_stdin<T: serde::de::DeserializeOwned>() -> Result<T, String> {
