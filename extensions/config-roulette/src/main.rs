@@ -61,7 +61,11 @@ fn main() {
         let content = match std::fs::read_to_string(&routes_path) {
             Ok(c) => c,
             Err(err) => {
-                eprintln!("Failed to read routes file '{}': {}", routes_path.display(), err);
+                eprintln!(
+                    "Failed to read routes file '{}': {}",
+                    routes_path.display(),
+                    err
+                );
                 std::process::exit(1);
             }
         };
@@ -107,7 +111,11 @@ fn main() {
         let config: serde_json::Value = match serde_json::from_str(&config_content) {
             Ok(v) => v,
             Err(err) => {
-                eprintln!("Failed to parse config '{}': {}", config_path.display(), err);
+                eprintln!(
+                    "Failed to parse config '{}': {}",
+                    config_path.display(),
+                    err
+                );
                 std::process::exit(1);
             }
         };

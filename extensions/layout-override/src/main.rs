@@ -38,10 +38,10 @@ fn main() {
 
         let mut config = request.config.clone();
 
-        if let Some(layout) = &args.layout {
-            if let Some(obj) = config.as_object_mut() {
-                obj.insert("layout".to_string(), serde_json::json!(layout));
-            }
+        if let Some(layout) = &args.layout
+            && let Some(obj) = config.as_object_mut()
+        {
+            obj.insert("layout".to_string(), serde_json::json!(layout));
         }
 
         if let Some(modules) = &args.modules {
