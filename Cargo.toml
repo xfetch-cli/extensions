@@ -6,4 +6,4 @@ members = [
 resolver = "2"
 
 [workspace.dependencies]
-xfetch-extension-api = { git = "https://github.com/xfetch-cli/api", package = "xfetch-extension-api" }
+xfetch-extension-api = { version = "0.1.0", package = "xfetch-extension-api" }
