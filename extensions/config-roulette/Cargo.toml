@@ -3,6 +3,7 @@ name = "xfetch-extension-config-roulette"
 version = "0.1.0"
 edition = "2024"
 license = "MIT"
+description = "Xfetch extension that randomly cycles a config value from a list on each run"
 
 [dependencies]
 serde = { version = "1.0.228", features = ["derive"] }

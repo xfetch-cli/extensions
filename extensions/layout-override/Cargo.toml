@@ -3,6 +3,7 @@ name = "xfetch-extension-layout-override"
 version = "0.1.0"
 edition = "2024"
 license = "MIT"
+description = "Xfetch extension that overrides layout settings from the config before rendering"
 
 [dependencies]
 serde = { version = "1.0.228", features = ["derive"] }
