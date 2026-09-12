@@ -1,0 +1,19 @@
+{
+  "manifest_version": 1,
+  "name": "wasm-lang-labels",
+  "version": "0.2.0",
+  "description": "Localizes module labels from LANG/LC_ALL (Python WebAssembly component)",
+  "kind": "config_provider",
+  "runtime": "component",
+  "build": "componentize-py -d ../../../api/wit -w extension componentize app -p . -o dist/wasm-lang-labels.wasm",
+  "artifact": "dist/wasm-lang-labels.wasm",
+  "capabilities": {
+    "env": ["LANG", "LC_ALL", "LC_MESSAGES"]
+  },
+  "limits": {
+    "timeout_ms": 20000,
+    "memory_mb": 256,
+    "output_kb": 512,
+    "host_call_kb": 64
+  }
+}

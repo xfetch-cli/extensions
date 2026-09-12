@@ -1,0 +1,17 @@
+{
+  "manifest_version": 1,
+  "name": "wasm-night-mode",
+  "version": "0.2.0",
+  "description": "Dims colors outside the daytime window (WebAssembly config provider)",
+  "kind": "config_provider",
+  "runtime": "core",
+  "build": "cargo build --release --target wasm32-wasip1",
+  "artifact": "../../target/wasm32-wasip1/release/xfetch-extension-wasm-night-mode.wasm",
+  "capabilities": {},
+  "limits": {
+    "timeout_ms": 5000,
+    "memory_mb": 64,
+    "output_kb": 512,
+    "host_call_kb": 64
+  }
+}
