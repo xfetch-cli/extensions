@@ -9,8 +9,3 @@ resolver = "2"
 [workspace.dependencies]
 xfetch-extension-api = { version = "0.2.0", package = "xfetch-extension-api" }
 
-# Local multi-repo development: build against the sibling api checkout so wasm
-# extensions get wasm-compatible helpers before the next crates.io release.
-# Remove this section when building standalone (or once crates are published).
-[patch.crates-io]
-xfetch-extension-api = { path = "../api/crates/extension-api" }

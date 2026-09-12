@@ -95,6 +95,8 @@ checksum = "e6e4313cd5fcd3dad5cafa179702e2b244f760991f45397d14d4ebf38247da75"
 [[package]]
 name = "xfetch-extension-api"
 version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8f0d4e7f50b3cc65e4ad5a6556354975e24429c430a8df06ff665709ed383cab"
 dependencies = [
  "serde",
  "serde_json",
