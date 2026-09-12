@@ -1,0 +1,21 @@
+{
+  "manifest_version": 1,
+  "name": "wasm-updates-footer",
+  "version": "0.2.0",
+  "description": "Appends the pending package-update count to the footer (Go WebAssembly)",
+  "kind": "config_provider",
+  "runtime": "core",
+  "build": "GOOS=wasip1 GOARCH=wasm go build -o dist/wasm-updates-footer.wasm .",
+  "artifact": "dist/wasm-updates-footer.wasm",
+  "capabilities": {
+    "exec": {
+      "allow": ["checkupdates", "pacman"]
+    }
+  },
+  "limits": {
+    "timeout_ms": 30000,
+    "memory_mb": 256,
+    "output_kb": 512,
+    "host_call_kb": 4096
+  }
+}

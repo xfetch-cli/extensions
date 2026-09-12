@@ -26,5 +26,20 @@
       <td>✓</td><td>✓</td><td>✓</td>
       <td>Local file reads only; <code>~</code> expands via <code>HOME</code> with a <code>USERPROFILE</code> fallback on Windows.</td>
     </tr>
+    <tr>
+      <td><code>wasm-night-mode</code></td>
+      <td>✓</td><td>✓</td><td>✓</td>
+      <td>WebAssembly core module; uses the WASI clock and an explicit UTC offset.</td>
+    </tr>
+    <tr>
+      <td><code>wasm-updates-footer</code></td>
+      <td>✓</td><td>✗</td><td>✗</td>
+      <td>Requires <code>checkupdates</code> or <code>pacman</code> (Arch-family distributions).</td>
+    </tr>
+    <tr>
+      <td><code>wasm-lang-labels</code></td>
+      <td>✓</td><td>✓</td><td>✓</td>
+      <td>WebAssembly component; reads the language environment variables.</td>
+    </tr>
   </tbody>
 </table>

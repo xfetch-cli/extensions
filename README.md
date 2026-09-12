@@ -53,6 +53,18 @@
       <td><code>config-roulette</code></td>
       <td>Picks a random (or daily) config from a list of paths — shows a different look every time.</td>
     </tr>
+    <tr>
+      <td><code>wasm-night-mode</code></td>
+      <td>Turns colors off outside the daytime window (Rust).</td>
+    </tr>
+    <tr>
+      <td><code>wasm-updates-footer</code></td>
+      <td>Appends the pending package-update count to the footer (Go).</td>
+    </tr>
+    <tr>
+      <td><code>wasm-lang-labels</code></td>
+      <td>Localizes module labels from <code>LANG</code>/<code>LC_ALL</code> (Python component).</td>
+    </tr>
   </tbody>
 </table>
 

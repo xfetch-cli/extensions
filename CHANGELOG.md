@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-09-12 — WebAssembly extensions
+
+- Added `wasm-night-mode` (Rust core module): disables colors outside the daytime window and can switch the palette style.
+- Added `wasm-updates-footer` (Go core module): appends the pending package-update count to the footer via allowlisted `checkupdates`/`pacman`.
+- Added `wasm-lang-labels` (Python component): localizes module labels from `LANG`/`LC_ALL` without overriding custom labels.
+- Added `scripts/ci-wasm.sh` for local builds of all three examples.
+
+
 ## 2026-08-19
 
 ### Timeout Standard
