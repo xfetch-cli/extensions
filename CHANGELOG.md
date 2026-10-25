@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-24 — Dependency security automation
+
+- Added `.github/workflows/security-audit.yml`: runs `cargo audit` 0.22.2 with `--deny warnings` on push, pull request and a weekly schedule, with actions pinned by commit SHA and no persisted checkout credentials.
+- Added weekly Dependabot updates for Cargo dependencies and GitHub Actions (`open-pull-requests-limit: 5`, minor/patch grouped).
+- No extension code or assets changed. The current lockfile audits clean (15 crates, 0 vulnerabilities, 0 warnings).
+
 ## 2026-09-12 — WebAssembly extensions
 
 - Added `wasm-night-mode` (Rust core module): disables colors outside the daytime window and can switch the palette style.
