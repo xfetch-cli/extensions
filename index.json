@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "catalog_version": "1.0.2",
+  "entries": [
+    {
+      "name": "config-roulette",
+      "description": "Xfetch extension that randomly cycles a config value from a list on each run",
+      "version": "0.2.0",
+      "kind": "config_provider",
+      "runtime": "native",
+      "path": "extensions/config-roulette",
+      "install": "config-roulette",
+      "capabilities": {}
+    },
+    {
+      "name": "layout-override",
+      "description": "Xfetch extension that overrides layout settings from the config before rendering",
+      "version": "0.2.0",
+      "kind": "config_provider",
+      "runtime": "native",
+      "path": "extensions/layout-override",
+      "install": "layout-override",
+      "capabilities": {}
+    },
+    {
+      "name": "wasm-lang-labels",
+      "description": "Localizes module labels from LANG/LC_ALL (Python WebAssembly component)",
+      "version": "0.2.0",
+      "kind": "config_provider",
+      "runtime": "wasm",
+      "guest_runtime": "component",
+      "path": "extensions/wasm-lang-labels",
+      "install": "wasm-lang-labels",
+      "capabilities": {
+        "env": [
+          "LANG",
+          "LC_ALL",
+          "LC_MESSAGES"
+        ]
+      }
+    },
+    {
+      "name": "wasm-night-mode",
+      "description": "Dims colors outside the daytime window (WebAssembly config provider)",
+      "version": "0.2.0",
+      "kind": "config_provider",
+      "runtime": "wasm",
+      "guest_runtime": "core",
+      "path": "extensions/wasm-night-mode",
+      "install": "wasm-night-mode",
+      "capabilities": {}
+    },
+    {
+      "name": "wasm-updates-footer",
+      "description": "Appends the pending package-update count to the footer (Go WebAssembly)",
+      "version": "0.2.0",
+      "kind": "config_provider",
+      "runtime": "wasm",
+      "guest_runtime": "core",
+      "path": "extensions/wasm-updates-footer",
+      "install": "wasm-updates-footer",
+      "capabilities": {
+        "exec": {
+          "allow": [
+            "checkupdates",
+            "pacman"
+          ]
+        }
+      }
+    }
+  ]
+}
