@@ -4,7 +4,7 @@
 
 <p>
   The extensions in this repository target
-  <code>xfetch-extension-api 0.3.0</code>. The JSON protocol remains
+  <code>xfetch-extension-api 0.3.1</code>. The JSON protocol remains
   <code>1</code> and the WIT package remains
   <code>xfetch:runtime@0.1.0</code>. Extensions built against the previous
   <code>0.2.0</code> SDK remain runtime-compatible.
