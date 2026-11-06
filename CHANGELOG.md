@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-11-06 — CI and wasm validation
+
+- Added a `Tests` workflow: fmt, clippy, workspace tests and catalog
+  verification on pull requests and on main after merge. It does not build or
+  publish release artifacts.
+- Validated `wasm-night-mode`, `wasm-lang-labels` and `wasm-updates-footer`
+  with their native wasm toolchains and runtime checks against xfetch 1.0.3.
+
+## 2026-11-06 — SDK 0.3.0 migration
+
+- Updated the workspace to `xfetch-extension-api` 0.3.0.
+- The JSON protocol remains version 1 and the WIT remains
+  `xfetch:runtime@0.1.0`.
+- Extension code, manifests and catalog versions are unchanged; this is a
+  dependency alignment with the core 0.3.0 SDK.
+
 ## 2026-11-03 — v1.0.2
 
 Release train v1.0.2 (catalog schema 1, catalog_version 1.0.2).
