@@ -7,5 +7,5 @@ members = [
 resolver = "2"
 
 [workspace.dependencies]
-xfetch-extension-api = { version = "0.3.1", git = "https://github.com/xfetch-cli/api", branch = "feat/command-kind", package = "xfetch-extension-api" }
+xfetch-extension-api = { version = "0.3.1", package = "xfetch-extension-api" }
 
