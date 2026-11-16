@@ -137,3 +137,11 @@
 <p>
   Errors should be printed to stderr and the process should exit with a non-zero status.
 </p>
+
+<h2>Licensing</h2>
+
+<p>
+  The code authored by xscriptor in this repository is GPL-3.0-only. Addons
+  and additional functionality contributed by other developers may use their
+  own licenses; see <a href="./ADDON-LICENSING.md">ADDON-LICENSING.md</a>.
+</p>

@@ -2,7 +2,7 @@
 name = "xfetch-extension-config-roulette"
 version = "0.2.0"
 edition = "2024"
-license = "MIT"
+license = "GPL-3.0-only"
 description = "Xfetch extension that randomly cycles a config value from a list on each run"
 
 [dependencies]
