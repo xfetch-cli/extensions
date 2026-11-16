@@ -2,7 +2,7 @@
 name = "xfetch-extension-wasm-night-mode"
 version = "0.2.0"
 edition = "2024"
-license = "MIT"
+license = "GPL-3.0-only"
 description = "Xfetch config provider that dims the fetch at night, compiled to WebAssembly"
 
 [dependencies]
