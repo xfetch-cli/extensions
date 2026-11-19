@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-11-19 — theme-sync
+
+- Added `theme-sync`, a sandboxed WebAssembly config provider that applies the
+  active equisdots palette to xfetch. It reads `settings.json` and
+  `themes/<slug>.jsonc` from a read-only `~/.config` mount, restores colors
+  after `config-roulette`, and is a no-op for configs that already define
+  colors unless `force` is set.
+- Added a checked-in `dist/theme-sync.wasm` so catalog installs do not need a
+  Rust toolchain.
+- Catalog schema is unchanged; `catalog_version` moves to `1.1.0`.
+
 ## 2026-11-06 — SDK 0.3.1 migration
 
 - Updated the workspace to `xfetch-extension-api` 0.3.1.

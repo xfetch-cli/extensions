@@ -27,7 +27,7 @@ EXTENSIONS_DIR = ROOT / "extensions"
 OUTPUT = ROOT / "index.json"
 
 SCHEMA_VERSION = 1
-CATALOG_VERSION = "1.0.2"
+CATALOG_VERSION = "1.1.0"
 WASM_RUNTIMES = {"core", "component"}
 
 

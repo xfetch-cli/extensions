@@ -65,6 +65,10 @@
       <td><code>wasm-lang-labels</code></td>
       <td>Localizes module labels from <code>LANG</code>/<code>LC_ALL</code> (Python component).</td>
     </tr>
+    <tr>
+      <td><code>theme-sync</code></td>
+      <td>Syncs xfetch colors with the active equisdots palette (WebAssembly).</td>
+    </tr>
   </tbody>
 </table>
 

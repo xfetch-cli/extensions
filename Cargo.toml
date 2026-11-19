@@ -3,6 +3,7 @@ members = [
   "extensions/layout-override",
   "extensions/config-roulette",
   "extensions/wasm-night-mode",
+  "extensions/theme-sync",
 ]
 resolver = "2"
 

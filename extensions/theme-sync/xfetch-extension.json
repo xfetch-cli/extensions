@@ -1,0 +1,27 @@
+{
+  "manifest_version": 1,
+  "name": "theme-sync",
+  "version": "0.1.0",
+  "description": "Sync xfetch colors with the active equisdots palette",
+  "kind": "config_provider",
+  "runtime": "core",
+  "build": "cargo build --release --target wasm32-wasip1 && mkdir -p dist && cp ../../target/wasm32-wasip1/release/xfetch-extension-theme-sync.wasm dist/theme-sync.wasm",
+  "artifact": "dist/theme-sync.wasm",
+  "sha256": "1ba75c45802a066b507a42e419b3448821631e64bd52325ef7d3ab62c4638e55",
+  "capabilities": {
+    "fs": [
+      {
+        "host": "~/.config",
+        "guest": "/config",
+        "mode": "ro"
+      }
+    ],
+    "env": ["HOME"]
+  },
+  "limits": {
+    "timeout_ms": 5000,
+    "memory_mb": 64,
+    "output_kb": 512,
+    "host_call_kb": 64
+  }
+}

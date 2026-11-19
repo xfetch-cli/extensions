@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": "1.0.2",
+  "catalog_version": "1.1.0",
   "entries": [
     {
       "name": "config-roulette",
@@ -21,6 +21,28 @@
       "path": "extensions/layout-override",
       "install": "layout-override",
       "capabilities": {}
+    },
+    {
+      "name": "theme-sync",
+      "description": "Sync xfetch colors with the active equisdots palette",
+      "version": "0.1.0",
+      "kind": "config_provider",
+      "runtime": "wasm",
+      "guest_runtime": "core",
+      "path": "extensions/theme-sync",
+      "install": "theme-sync",
+      "capabilities": {
+        "fs": [
+          {
+            "host": "~/.config",
+            "guest": "/config",
+            "mode": "ro"
+          }
+        ],
+        "env": [
+          "HOME"
+        ]
+      }
     },
     {
       "name": "wasm-lang-labels",
