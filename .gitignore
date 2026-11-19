@@ -1,3 +1,5 @@
 /target/
 # Built wasm artifacts (installer output)
 dist/
+!extensions/theme-sync/dist/
+!extensions/theme-sync/dist/theme-sync.wasm

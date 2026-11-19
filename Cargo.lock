@@ -132,6 +132,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "xfetch-extension-theme-sync"
+version = "0.1.0"
+dependencies = [
+ "serde",
+ "serde_json",
+ "xfetch-extension-api",
+]
+
+[[package]]
 name = "xfetch-extension-wasm-night-mode"
 version = "0.2.0"
 dependencies = [

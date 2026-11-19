@@ -1,0 +1,11 @@
+[package]
+name = "xfetch-extension-theme-sync"
+version = "0.1.0"
+edition = "2024"
+license = "GPL-3.0-only"
+description = "Sync xfetch colors with the active equisdots palette"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+xfetch-extension-api = { workspace = true }

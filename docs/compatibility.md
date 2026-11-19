@@ -52,5 +52,10 @@
       <td>✓</td><td>✓</td><td>✓</td>
       <td>WebAssembly component; reads the language environment variables.</td>
     </tr>
+    <tr>
+      <td><code>theme-sync</code></td>
+      <td>✓</td><td>✓</td><td>✗</td>
+      <td>Read-only <code>~/.config</code>; expects equisdots <code>settings.json</code> and <code>~/.config/xfetch/themes</code>.</td>
+    </tr>
   </tbody>
 </table>

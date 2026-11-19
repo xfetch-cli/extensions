@@ -7,8 +7,12 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 
 if rustup target list --installed 2>/dev/null | grep -q '^wasm32-wasip1$'; then
-  echo "==> cargo build --release --target wasm32-wasip1 (wasm-night-mode)"
+  echo "==> cargo build --release --target wasm32-wasip1 (wasm-night-mode, theme-sync)"
   cargo build --release --target wasm32-wasip1 -p xfetch-extension-wasm-night-mode
+  cargo build --release --target wasm32-wasip1 -p xfetch-extension-theme-sync
+  mkdir -p extensions/theme-sync/dist
+  cp target/wasm32-wasip1/release/xfetch-extension-theme-sync.wasm \
+    extensions/theme-sync/dist/theme-sync.wasm
 else
   echo "==> skip Rust wasm (wasm-night-mode): wasm32-wasip1 target not installed"
 fi
